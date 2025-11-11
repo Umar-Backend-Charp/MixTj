@@ -1,9 +1,8 @@
 ﻿using System.Text.Json;
-using Infrastructure.Interfaces;
 using Microsoft.Extensions.Caching.Distributed;
 using Serilog;
 
-namespace Infrastructure.Services;
+namespace Infrastructure.Caching;
 
 public class CacheService(IDistributedCache cacher) : ICacheService
 {

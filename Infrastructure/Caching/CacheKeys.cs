@@ -1,6 +1,6 @@
 ﻿namespace Infrastructure.Caching;
 
-public class CacheKeys
+public static class CacheKeys
 {
-    
+    public const string News = "News";
 }

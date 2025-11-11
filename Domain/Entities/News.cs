@@ -1,6 +1,12 @@
-﻿namespace Domain.Entities;
+﻿using Domain.Enums;
 
-public class News
+namespace Domain.Entities;
+
+public class News : BaseEntity
 {
-    
+    public required string AuthorId { get; set; }
+    public required string Title { get; set; }
+    public required string Content { get; set; }
+    public Category Category { get; set; }
+    public string[]? Tags { get; set; }
 }

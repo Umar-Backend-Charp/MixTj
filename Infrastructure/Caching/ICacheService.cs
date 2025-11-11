@@ -1,4 +1,4 @@
-﻿namespace Infrastructure.Interfaces;
+﻿namespace Infrastructure.Caching;
 
 public interface ICacheService
 {

@@ -1,9 +1,11 @@
 using System.Text;
 using Domain.Entities;
+using Infrastructure.Caching;
 using Infrastructure.Data.DataContext;
 using Infrastructure.Data.Seed;
 using Infrastructure.Interfaces;
 using Infrastructure.Profiles;
+using Infrastructure.Repositories;
 using Infrastructure.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
@@ -67,6 +69,9 @@ builder.Services.AddIdentity<AppUser, IdentityRole>(options =>
 builder.Services.AddAutoMapper(typeof(AppProfile));
 
 builder.Services.AddScoped<IAuthService, AuthService>();
+builder.Services.AddScoped<ICacheService, CacheService>();
+builder.Services.AddScoped<INewsRepository, NewsRepository>();
+builder.Services.AddScoped<INewsService, INewsService>();
 
 builder.Services.AddScoped<Seeder>();
 builder.Services.AddAuthentication(config =>

@@ -5,11 +5,11 @@ using Infrastructure.Responses;
 
 namespace Infrastructure.Interfaces;
 
-public interface INewsRepositoryService
+public interface INewsService
 {
     Task<Response<string>> CreateNewsAsync(CreateNewsDto dto);
-    Task<Response<string>> UpdateNewsAsync(CreateNewsDto dto);
+    Task<Response<string>> UpdateNewsAsync(UpdateNewsDto dto);
     Task<Response<string>> DeleteNewsAsync(Guid newsId);
-    Task<Response<string>> GetNewsByIdAsync(Guid newsId);
-    Task<Response<string>> GetAllNewsAsync(NewsFilter filter);
+    Task<Response<GetNewsDto>> GetNewsByIdAsync(Guid newsId);
+    Task<PaginationResponse<List<GetNewsDto>>> GetAllNewsAsync(NewsFilter filter);
 }

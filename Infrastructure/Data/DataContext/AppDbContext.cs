@@ -6,5 +6,5 @@ namespace Infrastructure.Data.DataContext;
 
 public class AppDbContext(DbContextOptions<AppDbContext> options) : IdentityDbContext<AppUser>(options)
 {
-    
+    public DbSet<News> News { get; set; }
 }
